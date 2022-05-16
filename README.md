@@ -6,9 +6,7 @@ Création d'une application mobile pour android et IOS, une calculatrice permett
 
 ## Démarrage
 
-Executez la commande ``npm install``
-
-Executez la commande ``expo start``
+Executez la commande ``yarn && expo start``
 
 ### Choisir son environnement de simulation:
 
