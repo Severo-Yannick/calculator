@@ -21,6 +21,13 @@ const Keyboard = () => {
     setFirstNumber('')
   }
 
+  const clear = () => {
+    setFirstNumber('')
+    setSecondNumber('')
+    setOperation('')
+    setResult(null)
+  }
+
   return (
     <>
     </>
