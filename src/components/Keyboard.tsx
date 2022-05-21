@@ -15,6 +15,12 @@ const Keyboard = () => {
       setFirstNumber(firstNumber + buttonValue)
   }
 
+  const handleOperationPress = (buttonValue: string) => {
+    setOperation(buttonValue)
+    setSecondNumber(firstNumber)
+    setFirstNumber('')
+  }
+
   return (
     <>
     </>
