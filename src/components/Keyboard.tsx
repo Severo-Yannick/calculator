@@ -9,6 +9,7 @@ const Keyboard = () => {
   const [secondNumber, setSecondNumber] = useState('')
   const [operation, setOperation] = useState('')
   const [result, setResult] = useState<Number | null>(null)
+  const BIG_INT = 99999
 
   const handleNumberPress = (buttonValue: string) => {
     if(firstNumber.length < 10)
@@ -53,8 +54,21 @@ const Keyboard = () => {
     }
   }
 
+  const firstNumberDisplay = () => {
+    if (result !== null)
+      return <Text style={result < BIG_INT ? [Styles.screenFirstNumber, {color: myColors.result}] : [Styles.screenFirstNumber, {fontSize: 50, color: myColors.result}]}>{result?.toString()}</Text>
+    if (firstNumber && firstNumber.length < 6)
+      return <Text style={Styles.screenFirstNumber}>{firstNumber}</Text>
+    if (firstNumber === '')
+      return <Text style={Styles.screenFirstNumber}>{'0'}</Text>
+    if (firstNumber.length > 5 && firstNumber.length < 8)
+      return <Text style={[Styles.screenFirstNumber, {fontSize: 70}]}>{firstNumber}</Text>
+    if (firstNumber.length > 7)
+      return <Text style={[Styles.screenFirstNumber, {fontSize: 50}]}>{firstNumber}</Text>
+  }
+
   return (
-    <>
+    <View style={Styles.viewBottom}>
       <View style={Styles.row}>
         <Button title='C' isGray onPress={clear}></Button>
         <Button title='+/-' isGray onPress={() => handleOperationPress('+/-')}></Button>
@@ -85,7 +99,7 @@ const Keyboard = () => {
         <Button title='⌫' onPress={() => setFirstNumber(firstNumber.slice(0, -1))}></Button>
         <Button title='=' isBlue onPress={() => getResult()}></Button>
       </View>
-    </>
+    </View>
   )
 }
 
