@@ -69,6 +69,13 @@ const Keyboard = () => {
 
   return (
     <View style={Styles.viewBottom}>
+      <View>
+        <Text style={Styles.screenSecondNumber}>
+          {secondNumber}
+          <Text style={{color: myColors.purpule, fontSize: 50, fontWeight: '500'}}>{operation}</Text>
+        </Text>
+        {firstNumberDisplay()}
+      </View>
       <View style={Styles.row}>
         <Button title='C' isGray onPress={clear}></Button>
         <Button title='+/-' isGray onPress={() => handleOperationPress('+/-')}></Button>
