@@ -32,23 +32,23 @@ const Keyboard = () => {
   const getResult = () => {
     switch (operation) {
       case '+':
-        clear
+        clear()
         setResult(parseInt(secondNumber) + parseInt(firstNumber))
         break
       case '-':
-        clear
+        clear()
         setResult(parseInt(secondNumber) - parseInt(firstNumber))
         break
       case '*':
-        clear
+        clear()
         setResult(parseInt(secondNumber) * parseInt(firstNumber))
         break
       case '/':
-        clear
+        clear()
         setResult(parseInt(secondNumber) / parseInt(firstNumber))
         break
       default:
-        clear
+        clear()
         setResult(0)
         break
     }
